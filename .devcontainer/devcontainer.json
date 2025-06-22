@@ -1,0 +1,19 @@
+{
+  "name": "bun-devcontainer-template",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "appuser",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces,type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces",
+  "mounts": [
+    "source=/home/bahori1991/.bashrc,target=/home/appuser/.bashrc,type=bind"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
