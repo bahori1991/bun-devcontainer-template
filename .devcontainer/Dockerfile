@@ -1,7 +1,7 @@
 FROM oven/bun:latest
 
 # システムパッケージの更新とgit&bash-completionのインストール
-RUN apt update && apt install -y git bash-completion && \
+RUN apt update && apt install -y git bash-completion openssh-client && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -18,6 +18,11 @@ RUN mkdir -p /home/appuser && \
 # 権限設定
 RUN mkdir -p /workspaces && \
     chown -R appuser:appuser /workspaces
+
+# SSHディレクトリの作成と権限設定
+RUN mkdir -p /home/appuser/.ssh && \
+    chown -R appuser:appuser /home/appuser/.ssh && \
+    chmod 700 /home/appuser/.ssh
 
 # git bash completionの設定
 RUN echo "source /usr/share/bash-completion/completions/git" >> /home/appuser/.bashrc
