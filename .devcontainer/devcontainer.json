@@ -11,6 +11,16 @@
   ],
   "customizations": {
     "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "christian-kohler.npm-intellisense",
+        "christian-kohler.path-intellisense",
+        "humao.rest-client",
+        "bradlc.vscode-tailwindcss",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "biomejs.biome"
+      ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
       }
